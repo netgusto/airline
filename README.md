@@ -90,6 +90,7 @@ var router = Router(route('/',
   routes,
   route('/mountprefix', otherroutes)
 ));
+```
 
 ### Koa bindings
 
