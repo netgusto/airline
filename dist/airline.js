@@ -3,6 +3,7 @@
 Object.defineProperty(exports, '__esModule', {
     value: true
 });
+var _bind = Function.prototype.bind;
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -207,7 +208,6 @@ var Router = (function () {
         value: function koamatch() {
             var router = this;
             return function* (next) {
-                console.log('laaa');
                 this.route = router.match(this.req.url, this.req.method);
                 this._routed = true;
                 yield next;
@@ -244,6 +244,12 @@ var Router = (function () {
 
 ;
 
-exports.default = { Router: Router, route: route };
+exports.default = { Router: function () {
+        for (var _len7 = arguments.length, args = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+            args[_key7] = arguments[_key7];
+        }
+
+        return new (_bind.apply(Router, [null].concat(args)))();
+    }, route: route };
 module.exports = exports.default;
 

@@ -65,6 +65,7 @@ class Route {
 };
 
 class Router {
+
     constructor(routes = null) {
         this.routesByMethod = {};
         this._routes = [];
@@ -102,7 +103,6 @@ class Router {
     koamatch() {
         const router = this;
         return function*(next) {
-            console.log('laaa');
             this.route = router.match(this.req.url, this.req.method);
             this._routed = true;
             yield next;
@@ -128,4 +128,4 @@ class Router {
     }
 };
 
-export default { Router, route };
+export default { Router: function(...args) { return new Router(...args); }, route };
