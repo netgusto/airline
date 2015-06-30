@@ -1,6 +1,12 @@
 # airline
 Land every request to it's destination. Works great with koa.
 
+## Install
+
+```bash
+$ npm install airline
+```
+
 ## What is it
 
 airline is a generic javascript HTTP router.
@@ -117,12 +123,6 @@ const app = koa()
   .use(anotherMiddleware())
   .use(router.koa())
   .listen(3000);
-```
-
-## Install
-
-```bash
-$ npm install airline
 ```
 
 ## Example with koa
