@@ -19,7 +19,7 @@ To define a route, just use the `route` function, and pass it your path string, 
 var home = route('/', homeController);
 ```
 
-The path can contain named parameters, noted with a prefixing ':':
+The path can contain named parameters, noted with a prefixing `:` :
 
 ```javascript
 var detail = route('/document/:id', docDetailController);
@@ -28,7 +28,7 @@ var detail = route('/document/:id', docDetailController);
 The path can also contain dynamic segments :
 
 ```javascript
-var catchAllUnderMusic = route('/music/**');
+var catchAllUnderMusic = route('/music/**', controller);
 ```
 
 You can nest routes as needed:
